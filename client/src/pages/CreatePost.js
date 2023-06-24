@@ -1,6 +1,5 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useHistory } from 'react-router-dom';
 import * as Yup from "yup";
 import axios from "axios";
 
@@ -9,8 +8,9 @@ function CreatePost() {
     question: "",
     answer: "",
     username: "abcd",
+    lastClick: 1,
   };
-  let history = useHistory();
+
   const validationSchema = Yup.object().shape({
     question: Yup.string().required("You must input a Question!"),
     answer: Yup.string().required(),
